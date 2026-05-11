@@ -8,8 +8,8 @@ from typing import List, Optional, Tuple, Any
 class ClipboardDatabase:
     MAX_HISTORY = 500
 
-    def __init__(self):
-        self.db_path = self._get_db_path()
+    def __init__(self, db_path: str = None):
+        self.db_path = db_path if db_path else self._get_db_path()
         self._init_db()
 
     def _get_db_path(self) -> str:
